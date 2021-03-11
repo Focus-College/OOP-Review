@@ -1,64 +1,103 @@
-# TypeScript Boilerplate
+# Software Development: Object Oriented Programming Review
 
-This boilerplate comes installed with the following packages:
+After each exercise, please commit with a message matching the Excercise Title below and then push to your repo. Create a pull request after your first commit in order to submit your result.
 
-- ESLint (Linting)
-  - .eslintrc
-  - .eslintignore
+<br/>
 
-- Prettier (Code Formatting)
-  - .prettierrc.json
-  - .prettierignore
+## Exercise 1: Person Class (15 Minutes)
+---
 
-- Typescript Compiler
-  - tsconfig.json
+Create a class named `Person` in a file named `class.person.ts`:
+- `Person` has 4 properties: id, firstName, lastName, name.
+- The "name" property is always `firstName lastName`
 
-- Git Repository
-  - .gitignore
+<br/>
 
+## Exercise 2: Birthdate & Age (30 Minutes)
+---
+Add properties to the person class:
 
-## Installation Instructions
+- public birthdate: Date
+- public age: number `// must reflect the person's age based on the birthdate`
+- private: `// a mechanism to access the birthdate as a string`
 
-To install this package, please run: `npm install`
+You may use an external library like [dayjs](https://day.js.org/docs/en/installation/installation) but it's not required. The birthdate MUST be of type Date.
 
-## Start Scripts
+<br/>
 
-This package has 3 start scripts:
+## Exercise 3: Property Class
+---
 
-`npm run start`
-- This script will run 
-  - `node dist/index.js`
+Create a class named `Property` in a file named `class.property.ts`:
 
-To run the linter and code formetter in report only mode
-( NO changes will be made to your code ).
+- property has 3 properties: id, address, and owner.
+- address is a string
+- owner is a Person
+- owner MUST be set
+- address MUST be set and READ ONLY
 
-`npm run start:dev`
-- This script will run:
-  - `npm run build`
-  - `npm run start`
+<br/>
 
-To run the linter and code formatter in fix mode (changes WILL be made to your code):
+## Exercise 4: Organization Class
+---
 
-`npm run start:dev:fix`
-- This script will run:
-  - `npm run build:fix`
-  - `npm run start`
+Create a class named `Organization` in a file named `class.organization.ts`:
 
-To skip linting and formatting:
+- has 2 properties: id, name
 
-`npm run start:dev:notest`
-- This script will run:
-  - `npm run build:compile`
-  - `npm run start`
+Create an interface that has two properties:
 
-### Supporting Scripts
+- id: string
+- name: string
 
-`npm run build`
-  - `npm run build:lint`
-  - `npm run build:prettier`
-  - `npm run build:compile`
+Ensure both the `Person` class and the `Organization` class implement the new interface
 
-`npm run build:fix`
-  - `npm run build:lint:fix`
-  - `npm run build:prettier:fix`
-  - `npm run build:compile`
+<br/>
+
+## Exercise 5: Property modification
+---
+
+Modify the `Property` class to:
+- have multiple owners
+- allow any class that matches the interface created in Exercise 4 to be an owner
+
+<br/>
+
+## Exercise 6: Property Builder
+---
+
+Create a `PropertyBuilder` that provides steps to:
+- create a `Property` instance
+- add a property address (you must be able to set the address after instantitation, but the property must remain read only)
+- add owners individually
+
+The test should:
+- Add multiple owners with the builder
+- Add a single owner with the builder
+
+<br/>
+
+## Exercise 7: Property Rentals
+---
+
+Create a `PropertyRental` class that inherits from `Property`, with the following properties:
+- termStart: Date
+- termEnd: Date
+- lengthOfTerm: number `// duration of days between termStart and termEnd`
+
+And method:
+- isTermOver( on?:Date ): boolean `// determines if the term is over on date or now if Date is not provided`
+- leftInTerm( on?:Date ): number `// number of days left in term from date or now if Date is not provided`
+
+<br/>
+
+## Exercise 8: Organization Suffix
+---
+
+With the `Organization` class:
+
+- Add a `suffix` property to the organization that can be only one of these values:
+  LTD, LTD., Ltd, Ltd., LLC, INC, INC. Inc, Inc.
+- Add a `dba` property that is a string that can be any string
+- Add a `legalName` property that is the `${name} ${suffix}`
+- Add a `sell` method that transfers one or more owners share of an organization to another group of owners
