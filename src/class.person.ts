@@ -1,6 +1,7 @@
 import dayjs = require('dayjs');
+import { IEntity } from './interfaces';
 
-export class Person {
+export class Person implements IEntity {
     id: string;
     name: string;
     age:number;    
