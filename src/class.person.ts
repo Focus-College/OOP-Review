@@ -1,6 +1,6 @@
 import { IPoly } from "./interfaces/ipoly.interface";
+import { v4 } from "uuid";
 
-// console.log("Software Developmnet: Object Oriented Programming")
 const dayjs = require('dayjs')
 
 export class Person implements IPoly {
@@ -9,6 +9,7 @@ export class Person implements IPoly {
 
     public birthDate:Date;
     public age:number;
+    
 
     constructor(public firstName:string, public lastName:string){
         this.name = firstName + " " + lastName;
@@ -18,8 +19,13 @@ export class Person implements IPoly {
     //     return this.birthDate;
     // }
 
+    getAge (){
+        this.age = dayjs(this.birthDate)
+        return this.age
+    }
+
     setId() {
-        this.id = "1";
+        this.id = v4();
     }
 
     

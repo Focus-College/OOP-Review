@@ -1,16 +1,26 @@
 import { Person } from "../class.person";
+import { IPoly } from "../interfaces/ipoly.interface";
+import { v4 } from "uuid";
+
 
 export class Property{ 
-
-  // id: string = "t45"
   
-  constructor(public id:number, private address:string, public owner:Person){
-    Object.assign(this)
+  id: string
+  owners:any[]=[]
+
+  
+  constructor( private address:string, public owner:IPoly){
+    this.owners.push (owner)
   }
+
+  setId() {
+    this.id = v4();
+  } 
 
   get propertyAddress (){
     return this.address
   }
+
 
 
 }

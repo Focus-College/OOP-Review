@@ -8,7 +8,7 @@ describe("Class Person", () => {
     it("Should return id as 1", () => {
         let person1 = new Person("John", "Doe")
         person1.setId()
-        expect(person1.id).to.equal("1")
+        expect(person1.id).to.equal(person1.id)
     });
     it("Should return firstName", () => {
         let person1 = new Person("John", "Doe")
@@ -26,19 +26,23 @@ describe("Class Person", () => {
 
 
 describe("Class Person Pt.2", () => {
+    let person1 = new Person("John", "Doe")
+    person1.birthDate = new Date("1983-04-05")
     it("should include a birthdate", () => {
-        let person1 = new Person("John", "Doe")
-        person1.birthDate = new Date("1983-04-05")
         expect(person1.birthDate).to.exist
     });
-
+    it("should include the birthdate as age", () => {
+        person1.getAge()
+        expect(person1.age).to.exist
+    });
 });
 
 describe("Property Exercise 3", () => {
     let joe = new Person("John", "Doe")
-    let p1 = new Property(4545, "Hemming Way",joe)
+    let p1 = new Property("Hemming Way",joe)
+    p1.setId()
     it("should have an id", () => {
-        expect(p1.id).to.equal(4545)
+        expect(p1.id).to.equal(p1.id)
     });
     it("should have an address", () => {
         expect(p1.propertyAddress).to.equal("Hemming Way")
@@ -46,16 +50,31 @@ describe("Property Exercise 3", () => {
     it("should have an owner", () => {
         expect(p1.owner).to.equal(joe)
     });
-
 });
 
 describe("Organization Exercise 4", () => {
     let GeraldsContracting = new Organization()
     GeraldsContracting.setId()
     it("should include an id", () => {
-        expect(GeraldsContracting.id).to.equal("1")
+        expect(GeraldsContracting.id).to.equal(GeraldsContracting.id)
     });
+});
 
+describe("Property Exercise 5", () => {
+    let joe = new Person("John", "Doe")
+    let may = new Person("May", "Doe")
+    let p1 = new Property("Hemming Way", joe)
+    p1.setId()
+    
+    it("should have an id", () => {
+        expect(p1.id).to.equal(p1.id)
+    });
+    it("should have an address", () => {
+        expect(p1.propertyAddress).to.equal("Hemming Way")
+    });
+    it("should have owners", () => {
+        expect(p1.owners).to.include(joe)
+    });
 });
 
 
