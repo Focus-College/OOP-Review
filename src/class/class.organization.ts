@@ -1,6 +1,6 @@
-import { IPerson } from "../interface/interface.person";
+import { IEntity } from "../interface/interface.entity";
 
-export class Organization implements IPerson {
+export class Organization implements IEntity {
 
     id: string;
     name: string;

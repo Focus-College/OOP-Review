@@ -1,16 +1,18 @@
+import { IEntity } from "../interface/interface.entity";
 import { Person } from "./class.person";
 
 export class Property {
 
     id: string;
     readonly _address: string;
-    owner: Person ;
-
-    constructor(public firstName?:string, public lastName?:string, public address?: string){
+    owner: IEntity[] = [] ;
+    //public firstName?:string, public lastName?:string
+    constructor( public person:any, public address?: string){
 
         
         this._address = address;
-        this.owner = new Person(firstName,lastName);
+    
+        this.owner.push(person) ;
        
     }
 

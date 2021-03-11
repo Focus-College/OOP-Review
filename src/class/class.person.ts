@@ -1,6 +1,6 @@
 // import * as dayjs from 'dayjs'
-import { IPerson } from '../interface/interface.person';
-export class Person implements IPerson{
+import { IEntity } from '../interface/interface.entity';
+export class Person implements IEntity{
 
     id : string;
     // firstName: string = "firstName";

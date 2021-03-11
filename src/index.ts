@@ -11,5 +11,6 @@ khatab.birthDate = date;
 console.log(khatab.getAge());
 
 
-const owner = new Property("khatab","AL-Daghistani","kelowna SW rd")
+const owner = new Property(khatab,"kelowna SW rd")
+
 console.log(owner);
