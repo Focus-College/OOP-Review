@@ -101,3 +101,12 @@ With the `Organization` class:
 - Add a `dba` property that is a string that can be any string
 - Add a `legalName` property that is the `${name} ${suffix}`
 - Add a `sell` method that transfers one or more owners share of an organization to another group of owners
+
+<br/>
+
+## Exercise 9: Properties Collection
+---
+
+Create a `Properties` Collection: 
+- It should ONLY contain elements that are a Property.
+- It should have a method called `withOwners( owners:InterfaceFromExercise4 )` that returns a collection of properties where each property includes at least one of the owners from the list of owners
