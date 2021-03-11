@@ -1,4 +1,6 @@
-export class Person{
+import {InamedItem} from './class.organization'
+
+export class Person implements InamedItem{
     id:string
     name:string
     birthdate:Date
