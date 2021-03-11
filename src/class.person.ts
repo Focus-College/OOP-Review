@@ -14,9 +14,9 @@ export class Person implements IPoly {
         this.name = firstName + " " + lastName;
     }
 
-    private get getBirthdate(){
-        return this.birthDate;
-    }
+    // private get getBirthdate(){
+    //     return this.birthDate;
+    // }
 
     setId() {
         this.id = "1";
