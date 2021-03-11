@@ -1,7 +1,7 @@
 // console.log("Software Developmnet: Object Oriented Programming")
 
-import {Person} from './class.person';
-import { Property } from './class.property';
+import {Person} from './class/class.person';
+import { Property } from './class/class.property';
 
 let date: Date = new Date("1979-08-30");  
 

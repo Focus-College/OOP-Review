@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import {Person} from '../src/class.person'
+import {Person} from '../src/class/class.person'
 
 describe("Test Person", () => {
     it("should be return name, khatab AL-Daghistani", () => {
