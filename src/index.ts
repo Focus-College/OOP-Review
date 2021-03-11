@@ -1,4 +1,6 @@
-import { Person } from "./class.person"
+// import { Person } from "./class.person"
+// const dayjs = require('dayjs')
 
-let person1 = new Person(1, "John", "Doe")
-person1.fullName()
+// const person1 = new Person(1, "John", "Doe", dayjs("2018-06-03"))
+
+// console.log(person1)

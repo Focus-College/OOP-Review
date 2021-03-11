@@ -1,5 +1,5 @@
-console.log("Software Developmnet: Object Oriented Programming")
-
+// console.log("Software Developmnet: Object Oriented Programming")
+const dayjs = require('dayjs')
 // person
 // 4 properties
 // id
@@ -8,20 +8,19 @@ console.log("Software Developmnet: Object Oriented Programming")
 // name
 
 export class Person {
+    public name:string
 
-    id: number;
-    name:string;
-    firstName:string;
-    lastName: string;
+    public birthDate:Date;
+    public age:number;
 
-    constructor(id:number, firstName:string, lastName:string){
-
+    constructor(public id: number, public firstName:string, public lastName:string){
+        this.name = firstName + " " + lastName;
     }
 
-    fullName(){
-        return this.firstName + "" + this.lastName;
+    private get getBirthdate(){
+        return this.birthDate;
     }
 
-
+    
 }
 
