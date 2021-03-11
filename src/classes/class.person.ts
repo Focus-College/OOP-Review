@@ -1,4 +1,4 @@
-import {InamedItem} from './class.organization'
+import {InamedItem} from '../interfaces/interfaces.InamedItem'
 
 export class Person implements InamedItem{
     id:string

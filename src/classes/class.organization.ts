@@ -1,7 +1,4 @@
-export interface InamedItem{
-    id:string
-    name:string
-}
+import {InamedItem} from '../interfaces/interfaces.InamedItem'
 
 export class Organization implements InamedItem{
     id:string
