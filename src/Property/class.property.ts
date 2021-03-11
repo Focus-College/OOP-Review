@@ -7,20 +7,22 @@ export class Property{
   
   id: string
   owners:any[]=[]
+  private address:string
 
-  
-  constructor( private address:string, public owner:IPoly){
-    this.owners.push (owner)
+
+  setAddress(location:string){
+    this.address = location;
+  }
+
+  getAddress(){
+    return this.address;
+  }
+
+  newOwner(person:IPoly){
+    this.owners.push(person)
   }
 
   setId() {
     this.id = v4();
   } 
-
-  get propertyAddress (){
-    return this.address
-  }
-
-
-
 }
