@@ -15,7 +15,8 @@ describe("Test Review Framework", () => {
 
 describe("A person", () => {
 
-    const Doe = new Person( 3, "Jack", "Langely");
+    const mockDate = new Date("March 13, 2020 4:13:00")
+    const Doe = new Person( 3, "Jack", "Langely", mockDate, 200);
 
     it("should be of type person!", () => {
       
@@ -48,6 +49,27 @@ describe("A person", () => {
     
     });
 
+    
+    it("the birthday should be of type date", () => {
+      
+        expect(Doe.birthDate).to.be.instanceOf(Date);
+    
+    });
+
+
+    it("should be able to retun birthdate as a string.", () => {
+      
+        expect(Doe.yoink()).to.be.a("string");
+        expect(Doe.yoink()).to.be.eq(`"2020-03-13T11:13:00.000Z"`);
+
+    });
+
+    
+    it("should have an age of 200.", () => {
+      
+        expect(Doe.age).to.be.eq(200);
+
+    });
 
 
 
