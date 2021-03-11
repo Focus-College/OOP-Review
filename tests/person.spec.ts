@@ -2,7 +2,7 @@ import { expect } from "chai";
 import "mocha";
 
 //Classes
-import {Person} from "../src/class.person"
+import {Person} from "../src/classes/class.person"
 
 
 
