@@ -6,10 +6,8 @@ import {Person} from "../src/class.person"
 
 describe("Test class Person", () => {
 
-
     const person = new Person("Angham", "Alshahoud")
     person.birthDate = new Date(1999,9,7);
-
 
     it("should have six properties id, fname, lname, name, birthDate, age", () => {
 
