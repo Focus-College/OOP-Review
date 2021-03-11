@@ -1,8 +1,15 @@
+import {InamedItem} from '../interfaces/interfaces.InamedItem'
+
 export class Property {
     id:string
-    
-    constructor(public owner:string, private _address:string){
-        
+    owners:InamedItem[] = []
+
+    constructor(public owner:InamedItem, private _address:string){
+        this.owners.push(owner)
+    }
+
+    showOwners(){
+        return this.owners
     }
 
     get address():string{
