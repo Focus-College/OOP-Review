@@ -110,3 +110,12 @@ With the `Organization` class:
 Create a `Properties` Collection: 
 - It should ONLY contain elements that are a Property.
 - It should have a method called `withOwners( owners:InterfaceFromExercise4 )` that returns a collection of properties where each property includes at least one of the owners from the list of owners
+
+<br/>
+
+## Exercise 10: Rental Identifier
+---
+
+Add the following property to the `PropertyRental` class:
+- `tenants:InterfaceFromExercise4[]`
+- throw an error if the tenent is in the `owners` of the property
