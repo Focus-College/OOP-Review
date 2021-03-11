@@ -1,13 +1,16 @@
 import { expect } from "chai";
 import "mocha";
 import { Organization } from "../src/classes/class.organization";
+import { Person } from "../src/classes/class.person";
 import {Property} from "../src/classes/class.property"
 
 describe("Property Tests", () => {
     const owner = new Organization()
     owner.name = "Orchard Park Group"
     const property = new Property()
+    const person = new Person("Testy", "McTesterson")
     property.addOwner(owner)
+    property.addOwner(person)
     property.address = "2271 Harvey Ave"
     it("should be a Property", () => {
         expect(property).to.be.instanceOf(Property)
@@ -20,5 +23,8 @@ describe("Property Tests", () => {
     })
     it("should include Orchard Park Group as owners", () => {
         expect(property.showOwners()).to.include(owner)
+    })
+    it("should include Testy McTesterson as an owner", () => {
+        expect(property.showOwners()).to.include(person)
     })
 });
