@@ -6,6 +6,7 @@ import "mocha";
 describe("Person Class", () => {
 
     const person = new Person("Testy", "McTesterson")
+    person.birthdate = new Date("1980/03/25")
     it("should be an instance of Person", () => {
         expect(person).to.be.instanceOf(Person)
     });
@@ -20,5 +21,11 @@ describe("Person Class", () => {
     })
     it("should have the name Testy McTesterson", () => {
         expect(person.name).to.equal("Testy McTesterson")
+    })
+    it("should have a birthdate", () => {
+        expect(person.birthdate).to.exist
+    })
+    it("should be 40 years old", () => {
+        expect(person.calculateAge()).to.equal(40)
     })
 });
