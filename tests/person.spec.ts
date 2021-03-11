@@ -1,4 +1,4 @@
-import {Person} from '../src/classes/person'
+import {Person} from '../src/classes/class.person'
 
 import { expect } from "chai";
 import "mocha";
