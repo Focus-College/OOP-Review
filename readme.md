@@ -54,7 +54,7 @@ Ensure both the `Person` class and the `Organization` class implement the new in
 
 <br/>
 
-## Exercise 5: Property modification
+## Exercise 5: Property modification 
 ---
 
 Modify the `Property` class to:

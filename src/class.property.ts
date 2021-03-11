@@ -1,9 +1,10 @@
 import {Person} from "./class.person"
+import { IEntity } from "./interfaces";
 
 export class Property {
     id:string;
     readonly address:string;
-    owner: Person
+    owners: IEntity[] = []; 
 
   
     constructor(){
@@ -12,16 +13,12 @@ export class Property {
 
     }
 
-   
-       setOwner (){
+   get ownersNmaes(){
+       return this.owners.map(owner => owner.name).join(",")
+   }
 
-        const Owner = new Person("Angham", "Alshahoud")
-        Owner.id = "An1"
-        Owner.name
-        Owner.birthDate = new Date (1999,9,7)
-        Owner.CalculateAge()
-        this.owner = Owner
-        return this.owner
+       addOwner(owner:IEntity){
+           this.owners.push(owner)
 
        }
    
