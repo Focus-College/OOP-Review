@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
 import {v4} from 'uuid';
+import {IEntity} from './interface.entity';
 
-export class Person {
+export class Person implements IEntity {
 
     //Person Properties 
     id:string;

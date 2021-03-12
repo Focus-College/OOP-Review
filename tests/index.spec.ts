@@ -2,6 +2,7 @@ import { expect } from "chai";
 import "mocha";
 import {Person} from '../src/class.person'
 import {Property} from '../src/class.property'
+import { IEntity } from "../src/interface.entity";
 
 describe("How the Person Class should Work", () => {
 
@@ -29,7 +30,7 @@ describe("How the Properties Class should Work", () => {
     it("should have an address that is set in with constructor", () => {
         const gil = new Person("Gil", "Henry");
         const house = new Property(gil, "661 Bradford Rd");
-        
+
         expect(house._address).to.equal("661 Bradford Rd");
     });
 
@@ -41,6 +42,18 @@ describe("How the Properties Class should Work", () => {
         house.setOwner(dan);
 
         expect(house._owner).to.equal(dan);
+    });
+
+});
+
+describe("A Entity Interface", () => {
+    it("should store string values", () => {
+        const iEntity:IEntity = {
+            id: "123",
+            name:"unittest"
+        }
+        expect(iEntity.name).to.equal("unittest");
+        expect(iEntity.id).to.equal("123");
     });
 
 });
