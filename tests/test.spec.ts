@@ -113,19 +113,15 @@ describe("Property Rentals", () => {
     let startDate = new Date("2020-01-01")
     let endDate = new Date("2021-01-01")
     let testDate = new Date("2020-01-07")
-    let errorDate = new Date("2021-07-05")
+    let pastDate = new Date("2021-07-05")
     let rental = new PropertyRental(startDate, endDate);
 
     it("should expect isTermOver to be true", () => {
-        expect(rental.isTermOver(errorDate)).to.be.true;
+        expect(rental.isTermOver(pastDate)).to.be.true;
     });
 
     it("should test isTermOver to be false", () => {
         expect(rental.isTermOver(testDate)).to.be.false;
-    });
-
-    it("should throw error if date provided is past EndTerm ", () => {
-        expect(rental.leftInTerm(errorDate)).to.throw;
     });
 
     it("should be 188 days left in term", () => {
