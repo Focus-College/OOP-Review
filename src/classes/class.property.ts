@@ -90,3 +90,12 @@ export class PropertyRentals extends Property{
         }
     }
 }
+
+export class PropertiesCollection{
+    props:Property[] = []
+
+    withOwners(owner:InamedItem){
+        const ownedProperties = this.props.filter(p => p.owners.includes(owner))
+        return ownedProperties
+    }
+}
