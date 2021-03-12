@@ -16,7 +16,7 @@ describe("Test Review Framework", () => {
 describe("A person", () => {
 
     const mockDate = new Date("March 13, 2020 4:13:00")
-    const Doe = new Person( 3, "Jack", "Langely", mockDate, 200);
+    const Doe = new Person( "125", "Jack", "Langely", mockDate, 200);
 
     it("should be of type person!", () => {
       
@@ -39,7 +39,7 @@ describe("A person", () => {
 
     it("should have id 3", () => {
       
-        expect(Doe.lastName).to.be.eq("Langely");
+        expect(Doe.id).to.be.eq("125");
     
     });
 

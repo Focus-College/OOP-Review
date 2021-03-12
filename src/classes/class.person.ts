@@ -1,4 +1,8 @@
-export class Person {
+import {IEntity} from "./general_interfaces"
+
+
+
+export class Person implements IEntity {
 
     // id:string;
     // firstName:string;
@@ -8,7 +12,7 @@ export class Person {
 
 
     constructor(
-        public id:number, 
+        public id:string, 
         public firstName:string,
         public lastName:string,
         public birthDate:Date,
