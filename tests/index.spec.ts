@@ -38,10 +38,16 @@ describe("How the Properties Class should Work", () => {
         const gil = new Person("Gil", "Henry");
         const dan = new Person("Dan", "TheMan");
         const house = new Property(gil, "661 Bradford Rd");
-
-        house.setOwner(dan);
-
-        expect(house._owner).to.equal(dan);
+        house.removeOwner(gil);
+        house.addOwner(dan);
+        expect(house._owner[0]).to.equal(dan);
+    });
+    it("should be able to have multiple owners", () => {
+        const gil = new Person("Gil", "Henry");
+        const dan = new Person("Dan", "TheMan");
+        const house = new Property(gil, "661 Bradford Rd");
+        house.addOwner(dan);
+        expect(house._owner.length).to.equal(2); 
     });
 
 });

@@ -5,8 +5,10 @@ const person = new Person("Colby", "Boettcher");
 const newPerson = new Person("Jim", "Huche");
 
 const property = new Property(person, "123 Bigshot Lane");
+property.removeOwner(person);
+property.addOwner(newPerson);
 
-property.setOwner(newPerson);
+
 console.log(property);
 
 // //person.age automatically calculates the age of the person
