@@ -8,7 +8,7 @@ export type ReadonlyPartial<T> = { +readonly [P in keyof T]+?: T[P] }; // Add re
 export interface IProperty{
 
     id:number;
-    owner:Person;
+    owner:IEntity[];
 
 }
 
