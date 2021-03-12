@@ -13,4 +13,15 @@ export class Property {
     }
 
 }
+class PropertyBuilder {
+    private propertyBuilder: PropertyBuilder;
+
+    private setPropertyBuilder(propertyBuilder: PropertyBuilder): void {
+        this.propertyBuilder = propertyBuilder;
+    }
+}
+let owner:  {
+   address: Property
+
+};
 
