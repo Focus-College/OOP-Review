@@ -4,6 +4,7 @@ import {Property} from "../src/classes/class.property"
 import {PropertyRentals} from '../src/classes/class.property'
 import dayjs from 'dayjs'
 import { Organization } from "../src/classes/class.organization";
+import { Person } from "../src/classes/class.person";
 
 describe("Property Rentals", () => {
     const start1 = dayjs("2020-03-24", "YYYY-MM-DD")
@@ -14,6 +15,7 @@ describe("Property Rentals", () => {
     const rental2 = new PropertyRentals(start2.toDate(), end2.toDate())
     const org = new Organization()
     org.name = "Orchard Park Group"
+    const person = new Person("Person", "McPersonface")
     it("should be a PropertyRentals", () => {
         expect(rentals).to.be.instanceOf(PropertyRentals)
     });
@@ -50,5 +52,18 @@ describe("Property Rentals", () => {
     })
     it("should say the amount of time between April 1st 2021 and April 4, 2021", () => {
         expect(rental2.leftInTerm(new Date("2021-04-01"))).to.equal(Math.ceil((end2.toDate().getTime() - new Date("2021-04-01").getTime())/(1000 * 3600 * 24)))
+    })
+    it("should throw an error if an owner tries to rent their own property", () => {
+        expect(() => {
+            rentals.addRenter(org)
+        }).to.throw()
+    })
+    it("should allow a renter who is not an owner", () => {
+        expect(() => {
+            rentals.addRenter(person)
+        }).to.not.throw()
+    })
+    it("should get the tenants", () => {
+        expect(rentals.renters).to.contain(person)
     })
 });

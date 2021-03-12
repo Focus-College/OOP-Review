@@ -6,22 +6,26 @@ import { start } from 'node:repl'
 export class Property {
     
     id:string
-    owners:InamedItem[] = []
+    private _owners:InamedItem[] = []
     owner:InamedItem
     private _address:string
 
     constructor(owner?:InamedItem){
         if(owner){
-            this.owners.push(owner)
+            this._owners.push(owner)
         }
     }
 
     showOwners(){
-        return this.owners
+        return this._owners
     }
 
     addOwner(owner:InamedItem){
-        this.owners.push(owner)
+        this._owners.push(owner)
+    }
+
+    get owners(){
+        return this._owners
     }
 
     get address():string{
@@ -38,7 +42,7 @@ export class PropertyBuilder{
     baseProperty = new Property()
 
     addOwner(owner:InamedItem){
-        this.baseProperty.owners.push(owner)
+        this.baseProperty.addOwner(owner)
     }
 
     addAddress(address:string){
@@ -52,6 +56,19 @@ export class PropertyBuilder{
 
 export class PropertyRentals extends Property{
     lengthOfTerm:number
+    private _tenants:InamedItem[] = []
+
+    addRenter(renter:InamedItem){
+        if(this.owners.includes(renter)){
+            throw new Error("That person is an owner, and cannot be a tenant.")
+        } else {
+            this._tenants.push(renter)
+        }
+    }
+
+    get renters():InamedItem[]{
+        return this._tenants
+    }
 
     constructor(public termStart:Date, public termEnd:Date){
         super()
