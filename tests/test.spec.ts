@@ -59,10 +59,13 @@ describe("Property Exercise 3", () => {
 });
 
 describe("Organization Exercise 4", () => {
-    let GeraldsContracting = new Organization()
+    let GeraldsContracting = new Organization("Geralds Contracting")
     GeraldsContracting.setId()
     it("should include an id", () => {
         expect(GeraldsContracting.id).to.equal(GeraldsContracting.id)
+    });
+    it("should create the organizations legalName with a suffix", () => {
+        expect(GeraldsContracting.legalName).to.equal("Geralds Contracting LTD.")
     });
 });
 
@@ -120,11 +123,11 @@ describe("Property Rentals", () => {
         expect(rental.isTermOver(pastDate)).to.be.true;
     });
 
-    it("should test isTermOver to be false", () => {
+    it("should expect isTermOver to be false", () => {
         expect(rental.isTermOver(testDate)).to.be.false;
     });
 
-    it("should be 188 days left in term", () => {
+    it("should expect 360 days left in term", () => {
         expect(rental.leftInTerm(testDate)).to.equal(360);
     });
 
