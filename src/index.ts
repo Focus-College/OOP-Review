@@ -1,12 +1,21 @@
 console.log("Software Developmnet: Object Oriented Programming")
-class Person{
-    Id:number
-    FirstName:string
-    LastName:string
-    Name:string
+export class Person {
+    Id: number
+    FirstName: string
+    LastName: string
+    Name: string
+    Birthday: number
+    Age: number
 
-    public constructor(theName: string) {
+
+    public constructor(theName: string,) {
         this.Name = theName;
+    }
+}
+class Info{
+    public Birthday:number;
+    private static create(){
+
     }
 }
 
