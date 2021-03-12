@@ -18,6 +18,10 @@ describe("Property Tests", () => {
     it("should have an undefined id", () => {
         expect(property.id).to.equal(undefined)
     })
+    it("should create a Property with an owner attached", () => {
+        const prop = new Property(person)
+        expect(prop.owners).to.include(person)
+    })
     it("should be at 2271 Harvey Ave", () => {
         expect(property.address).to.equal("2271 Harvey Ave")
     })
