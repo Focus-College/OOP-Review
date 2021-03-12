@@ -4,6 +4,7 @@ import {Person} from '../src/class.person';
 import {Organization} from '../src/organization/class.organization';
 import {Property} from '../src/Property/class.property';
 import {PropertyBuilder} from '../src/Property/property.builder';
+import {PropertyRental} from '../src/Property/property.rental';
 
 describe("Class Person", () => {
     it("Should return id as 1", () => {
@@ -107,4 +108,29 @@ describe("Property Builder", () => {
     });
 });
 
+describe("Property Rentals", () => {
+
+    let startDate = new Date("2020-01-01")
+    let endDate = new Date("2021-01-01")
+    let testDate = new Date("2020-01-07")
+    let errorDate = new Date("2021-07-05")
+    let rental = new PropertyRental(startDate, endDate);
+
+    it("should expect isTermOver to be true", () => {
+        expect(rental.isTermOver(errorDate)).to.be.true;
+    });
+
+    it("should test isTermOver to be false", () => {
+        expect(rental.isTermOver(testDate)).to.be.false;
+    });
+
+    it("should throw error if date provided is past EndTerm ", () => {
+        expect(rental.leftInTerm(errorDate)).to.throw;
+    });
+
+    it("should be 188 days left in term", () => {
+        expect(rental.leftInTerm(testDate)).to.equal(360);
+    });
+
+});
 
