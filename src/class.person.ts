@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
-
+import {v4} from 'uuid';
 
 export class Person {
 
     //Person Properties 
-    id:number;
+    id:string;
     firstName:string;
     lastName:string;
     readonly name:string;
@@ -12,6 +12,7 @@ export class Person {
 
     constructor(firstName:string, lastName:string){
         //setting all the name properties
+        this.id = v4();
         this.firstName = firstName;
         this.lastName = lastName;
         this.name = firstName + " " + lastName;
@@ -22,11 +23,11 @@ export class Person {
         return dayjsDate;
     }
 
-    get birthday(){
+    getBirthday(){
         return this.getBirthdayAsString();
     }
 
-    public get age(){
+    public getAge(){
         const birthday = this.getBirthdayAsString();
         const day:number =  parseInt(birthday.slice(9,10));
         const month:number = parseInt(birthday.slice(6,7));
