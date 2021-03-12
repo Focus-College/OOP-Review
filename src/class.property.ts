@@ -1,7 +1,7 @@
 class person {
 }
 
-class Property {
+export class Property {
 readonly address:string;
 id:string;
 owner:person;

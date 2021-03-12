@@ -1,8 +1,7 @@
 import {Person} from "./index";
 
 
-class Organization{
-    Id:string
+class Organization extends Person{
+    Identification:string
     Name:string
-
 }
